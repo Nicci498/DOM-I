@@ -40,3 +40,90 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+//nav
+const nav = document.querySelectorAll('a');
+nav.forEach((links, i) => {
+  links.textContent = siteContent["nav"][`nav-item-${i}`];
+  links.style.color = 'green';
+})
+
+//cta
+const ctaHeader = document.querySelector("h1");
+ctaHeader.textContent = siteContent["cta"]["h1"];
+
+const button = document.querySelector("button");
+button.textContent = siteContent["cta"]["button"];
+
+const snip = document.getElementById('cta-img');
+snip.setAttribute('src', siteContent["cta"]["img-src"])
+
+//main
+//top
+const features = document.querySelector('h4');
+features.textContent = siteContent["main-content"]["features-h4"]
+
+const featuresContent = document.querySelector('p');
+featuresContent.textContent = siteContent["main-content"]["features-content"]
+
+const about = document.querySelector('div:nth-child(2) h4');
+about.textContent = siteContent["main-content"]["about-h4"]
+
+const aboutContent = document.querySelector('div:nth-child(2) p');
+aboutContent.textContent = siteContent["main-content"]["about-content"]
+
+//img
+const middlePic = document.getElementById('middle-img');
+middlePic.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+//bottom
+const services = document.querySelector('div:nth-child(3) h4');
+services.textContent = siteContent["main-content"]["services-h4"]
+
+const servicesContent = document.querySelector('div:nth-child(3) p');
+servicesContent.textContent = siteContent["main-content"]["services-content"]
+
+
+const product = document.querySelectorAll('.bottom-content div h4')
+product[1].textContent = siteContent["main-content"]["product-h4"]
+
+
+const productPar = document.querySelectorAll('.bottom-content div p')
+productPar[1].textContent = siteContent["main-content"]["product-content"]
+
+const vision = document.querySelectorAll('.bottom-content .text-content h4')
+vision[2].textContent = siteContent["main-content"]["vision-h4"]
+
+const visionPar = document.querySelectorAll('.bottom-content .text-content p')
+visionPar[2].textContent = siteContent["main-content"]["vision-content"]
+
+//contact
+const con = document.querySelector('.contact h4');
+con.textContent = siteContent["contact"]["contact-h4"]
+
+const contactContent = document.querySelectorAll('.contact p')
+contactContent[0].textContent = siteContent["contact"]["address"]
+contactContent[1].textContent = siteContent["contact"]["phone"]
+contactContent[2].textContent = siteContent["contact"]["email"]
+
+//footer
+const copy = document.querySelector('footer p');
+copy.textContent = siteContent["footer"]["copyright"]
+
+//nav style up in nav forEach loop
+
+//nav pre and append
+const last = document.createElement('a');
+const first = document.createElement('a');
+first.textContent = "First";
+last.textContent = "Last";
+first.style.color = "green";
+last.style.color = "green";
+first.setAttribute('href', '#');
+last.setAttribute('href', '#');
+const finale = document.querySelector('a');
+const finale2 = document.querySelector('nav');
+finale2.append(last);
+finale.prepend(first);
+
